@@ -22,7 +22,7 @@ app.use(express_1.default.json({ extended: false }));
 app.use((0, ratelimiter_1.default)());
 app.use(middleware_1.logger);
 app.get("/", (_req, res) => {
-    res.send("Hello Zuri mentor");
+    res.send("Hello my assigned HNG/Zuri mentor");
 });
 app.get("/api", (0, validator_1.validateQuery)(validators_1.Dto), (_req, res) => {
     const { slack_name, track } = _req.query;
@@ -31,8 +31,8 @@ app.get("/api", (0, validator_1.validateQuery)(validators_1.Dto), (_req, res) =>
         current_day: utils_1.daysOfWeek[new Date().getDay()],
         utc_time: new Date().toISOString().split(".")[0] + "Z",
         track,
-        github_file_url: "https://github.com/berryboylb/zuri_stage_one/blob/main/src/index.ts",
-        github_repo_url: "https://github.com/berryboylb/zuri_stage_one",
+        github_file_url: "https://github.com/devTenshi/HNG_stage_one/blob/main/src/index.ts",
+        github_repo_url: "https://github.com/devTenshi/HNG_stage_one",
         status_code: 200,
     });
 });

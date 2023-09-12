@@ -19,7 +19,7 @@ app.use(limiter());
 app.use(logger);
 
 app.get("/", (_req: Request, res: Response) => {
-  res.send("Hello Zuri mentor");
+  res.send("Hello my assigned HNG/Zuri mentor");
 });
 
 app.get("/api", validateQuery(Dto), (_req: Request, res: Response) => {
@@ -29,8 +29,8 @@ app.get("/api", validateQuery(Dto), (_req: Request, res: Response) => {
     current_day: daysOfWeek[new Date().getDay()],
     utc_time: new Date().toISOString().split(".")[0] + "Z",
     track,
-    github_file_url: "",
-    github_repo_url: "",
+    github_file_url: "https://github.com/devTenshi/HNG_stage_one/blob/main/src/index.ts",
+    github_repo_url: "https://github.com/devTenshi/HNG_stage_one",
     status_code: 200,
   });
 });
